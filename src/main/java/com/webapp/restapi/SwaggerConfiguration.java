@@ -20,17 +20,17 @@ public class SwaggerConfiguration extends WebMvcConfigurationSupport {
 	@Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2).select()
-                                                      .apis(RequestHandlerSelectors.basePackage("com.mongodb.starter"))
+                                                      .apis(RequestHandlerSelectors.basePackage("com.webapp.restapi"))
                                                       .paths(PathSelectors.any())
                                                       .build()
                                                       .apiInfo(info());
     }
 
     private ApiInfo info() {
-        return new ApiInfoBuilder().title("Quick start project")
-                                   .description("Quick start project using Java, Spring boot and MongoDB")
-                                   .contact(new Contact("Maxime Beugnet", "https://github.com/MaBeuLux88",
-                                                        "maxime.beugnet@gmail.com"))
+        return new ApiInfoBuilder().title("WebApp Project")
+                                   .description("WebApp project built using Java, Spring boot and MongoDB")
+                                   .contact(new Contact("Supreetha Somasundar", "https://github.com/supreetha-bs/CiscoWebApplication",
+                                                        "sbangaloreso@umass.edu"))
                                    .version("1.0.0")
                                    .license("Apache License Version 2.0")
                                    .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0\"")

@@ -2,150 +2,119 @@
 <project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	
-    <modelVersion>4.0.0</modelVersion>
+        <modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.webapp</groupId>
 	<artifactId>restapi</artifactId>
-	<version>1.0.0</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>WebApp</name>
-   	<packaging>jar</packaging>
+        <packaging>jar</packaging>
 	<description>REST API WebApp</description>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.2.0.RELEASE</version>
-        <relativePath> ../restapi/pom.xml</relativePath> 
 	</parent>
-
 	<properties>
-		<java.version>8</java.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <mongodb.version>3.11.1</mongodb.version>
-        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
-        <junit-engine.version>5.5.2</junit-engine.version>
-        <assertj-core.version>3.13.2</assertj-core.version>
-        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
-		<dependency>
-    		<groupId>com.googlecode.json-simple</groupId>
-    		<artifactId>json-simple</artifactId>
-    		<version>1.1.1</version>
-		</dependency>
+       <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb -->
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-data-mongodb</artifactId>
+                </dependency>
                 
-  		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
-       <dependency>
-     		<groupId>org.springframework.boot</groupId>
-       		<artifactId>spring-boot-starter-web</artifactId>
-      	</dependency>
+                 <dependency>
+				    <groupId>com.googlecode.json-simple</groupId>
+				    <artifactId>json-simple</artifactId>
+				    <version>1.1.1</version>
+				</dependency>
+                 <dependency>
+		           <groupId>io.springfox</groupId>
+		           <artifactId>springfox-swagger2</artifactId>
+		           <version>2.9.2</version>
+		           <scope>compile</scope>
+       			</dependency>
+       			<dependency>
+		          <groupId>io.springfox</groupId>
+		          <artifactId>springfox-swagger-ui</artifactId>
+		          <version>2.9.2</version>
+		          <scope>compile</scope>
+       			</dependency>
 
+                <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-web</artifactId>
+                </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-			<exclusions>
+                <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
+				<dependency>
+					<groupId>org.springframework.boot</groupId>
+		                        <artifactId>spring-boot-starter-test</artifactId>
+		                        <scope>test</scope>
+					<exclusions>
 				<exclusion>
-					<groupId>junit</groupId>
-              		<artifactId>junit</artifactId>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
 				<exclusion>
-		            <groupId>org.assertj</groupId>
-                   	<artifactId>assertj-core</artifactId>
-        		</exclusion>
+            <groupId>com.vaadin.external.google</groupId>
+            <artifactId>android-json</artifactId>
+        </exclusion>
 			</exclusions>
 		</dependency>
 		
-       <dependency>
-           <groupId>org.mongodb</groupId>
-           <artifactId>mongodb-driver-sync</artifactId>
-           <version>${mongodb.version}</version>
-       </dependency>
-       
-       
-       <dependency>
-           <groupId>io.springfox</groupId>
-           <artifactId>springfox-swagger2</artifactId>
-           <version>${springfox-swagger2.version}</version>
-           <scope>compile</scope>
-       </dependency>
-       <dependency>
-           <groupId>io.springfox</groupId>
-           <artifactId>springfox-swagger-ui</artifactId>
-           <version>${springfox-swagger2.version}</version>
-           <scope>compile</scope>
-       </dependency>
-       
-       
-       <dependency>
-           <groupId>org.junit.jupiter</groupId>
-           <artifactId>junit-jupiter-engine</artifactId>
-           <version>${junit-engine.version}</version>
-           <scope>test</scope>
-       </dependency>
-       <dependency>
-           <groupId>org.junit.vintage</groupId>
-           <artifactId>junit-vintage-engine</artifactId>
-           <version>${junit-engine.version}</version>
-           <scope>test</scope>
-       </dependency>
-       <dependency>
-           <groupId>org.assertj</groupId>
-           <artifactId>assertj-core</artifactId>
-           <version>${assertj-core.version}</version>
-           <scope>test</scope>
-       </dependency>
-       
-		
+		<!-- https://mvnrepository.com/artifact/de.flapdoodle.embed/de.flapdoodle.embed.mongo -->
+                <dependency>
+                    <groupId>de.flapdoodle.embed</groupId>
+                    <artifactId>de.flapdoodle.embed.mongo</artifactId>
+                    <scope>test</scope>
+                </dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.restdocs/spring-restdocs-mockmvc -->
+                <dependency>
+                    <groupId>org.springframework.restdocs</groupId>
+                    <artifactId>spring-restdocs-mockmvc</artifactId>
+                    <scope>test</scope>
+                </dependency>
+
 	</dependencies>
 
 	<build>
 		<plugins>
-
+			<plugin>
+				<groupId>org.asciidoctor</groupId>
+				<artifactId>asciidoctor-maven-plugin</artifactId>
+				<version>1.5.8</version>
+				<executions>
+					<execution>
+						<id>generate-docs</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>process-asciidoc</goal>
+						</goals>
+						<configuration>
+							<backend>html</backend>
+							<doctype>book</doctype>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<!-- https://mvnrepository.com/artifact/org.springframework.restdocs/spring-restdocs-asciidoctor -->
+                                    <dependency>
+                                        <groupId>org.springframework.restdocs</groupId>
+                                        <artifactId>spring-restdocs-asciidoctor</artifactId>
+                                        <version>2.0.4.RELEASE</version>
+                                    </dependency>
+				</dependencies>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-               	<version>${project.parent.version}</version>
 			</plugin>
-			
-           <plugin>
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-surefire-plugin</artifactId>
-               <configuration>
-                   <skipTests>true</skipTests>
-               </configuration>
-               <executions>
-                   <execution>
-                       <id>unit-tests</id>
-                       <phase>test</phase>
-                       <goals>
-                           <goal>test</goal>
-                       </goals>
-                       <configuration>
-                           <skipTests>false</skipTests>
-                           <includes>
-                               <include>**/*Test.java</include>
-                           </includes>
-                       </configuration>
-                   </execution>
-                   <execution>
-                       <id>integration-tests</id>
-                       <phase>integration-test</phase>
-                       <goals>
-                           <goal>test</goal>
-                       </goals>
-                       <configuration>
-                           <skipTests>false</skipTests>
-                           <includes>
-                               <include>**/*IT.java</include>
-                           </includes>
-                       </configuration>
-                   </execution>
-               </executions>
-           </plugin>
 		</plugins>
 	</build>
 

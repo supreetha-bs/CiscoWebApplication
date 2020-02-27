@@ -2,6 +2,8 @@ package com.webapp.restapi.Controller;
 
 import com.webapp.restapi.Repositories.ObjectsRepository;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -11,7 +13,6 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api")
-
 public class ObjectsController {
     private final ObjectsRepository objectsRepository;
     
@@ -23,6 +24,7 @@ public class ObjectsController {
     }
     
     @PostMapping("objects")
+    
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Document> postObject(@RequestBody String object) {
     	Document document;
