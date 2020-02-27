@@ -22,7 +22,7 @@ Web App consisting of REST APIs that is developed using Java and MongoDB.
 
 ## Swagger
 - Swagger is configured in this project in `SwaggerConfig.java`.
-- The APIs can be seen at [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html).
+- The APIs can be seen at [http://ciscowebapplication-env.bippfa4rem.us-east-2.elasticbeanstalk.com/swagger-ui.html](http://ciscowebapplication-env.bippfa4rem.us-east-2.elasticbeanstalk.com/swagger-ui.html).
 
 ## Author
 - Supreetha Somasundar
