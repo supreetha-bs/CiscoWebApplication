@@ -18,7 +18,7 @@ Web App consisting of REST APIs that is developed using Java and MongoDB.
 - Start the server in a console with `mvn spring-boot:run`.
 - If you add some Unit Tests, you would start them with `mvn clean test`.
 - You can build the project with : `mvn clean package`.
-- You can run the project with the fat jar and the embedded Tomcat: `java -jar target/java-spring-boot-mongodb-starter-1.0.0.jar`.
+- You can run the project with jar and the embedded Tomcat: `java -jar target/restapi-0.0.1-SNAPSHOT.jar`.
 
 ## Swagger
 - Swagger is configured in this project in `SwaggerConfig.java`.
